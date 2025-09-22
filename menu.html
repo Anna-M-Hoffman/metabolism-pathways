@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metabolic Pathways</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    nav {
+      background: #2c3e50;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #34495e;
+    }
+
+    nav a.active {
+      background: #1abc9c;
+    }
+
+    .content {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      background: white;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .tab {
+      display: none;
+    }
+
+    .tab img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="tablink active" onclick="showTab('ppp')">Pentose Phosphate Pathway</a>
+  <a href="#" class="tablink" onclick="showTab('glycolysis')">Glycolysis</a>
+  <a href="#" class="tablink" onclick="showTab('glycogen')">Glycogen Metabolism</a>
+  <a href="#" class="tablink" onclick="showTab('krebbs')">Krebbs Cycle</a>
+</nav>
+
+<div class="content">
+  <div id="ppp" class="tab" style="display:block;">
+    <h2>Pentose Phosphate Pathway (PPP)</h2>
+    <p>The pentose phosphate pathway generates NADPH and pentoses. It has oxidative and non-oxidative phases.</p>
+    <img src="images/ppp-diagram.png" alt="PPP Diagram Placeholder">
+  </div>
+
+  <div id="glycolysis" class="tab">
+    <h2>Glycolysis</h2>
+    <p>Glycolysis breaks down glucose into pyruvate, producing ATP and NADH.</p>
+    <img src="images/glycolysis-diagram.png" alt="Glycolysis Diagram Placeholder">
+  </div>
+
+  <div id="glycogen" class="tab">
+    <h2>Glycogen Metabolism</h2>
+    <p>Glycogen metabolism includes glycogen synthesis (glycogenesis) and glycogen breakdown (glycogenolysis).</p>
+    <img src="images/glycogen-diagram.png" alt="Glycogen Metabolism Diagram Placeholder">
+  </div>
+
+  <div id="krebbs" class="tab">
+    <h2>Krebbs Cycle (Citric Acid Cycle)</h2>
+    <p>The Krebbs cycle oxidizes acetyl-CoA to CO₂ and generates NADH, FADH₂, and ATP.</p>
+    <img src="images/krebbs-diagram.png" alt="Krebbs Cycle Diagram Placeholder">
+  </div>
+</div>
+
+<script>
+function showTab(tabId) {
+  // Hide all tabs
+  document.querySelectorAll('.tab').forEach(tab => tab.style.display = 'none');
+  // Remove active class from all links
+  document.querySelectorAll('.tablink').forEach(link => link.classList.remove('active'));
+  // Show selected tab
+  document.getElementById(tabId).style.display = 'block');
+  // Highlight active link
+  event.currentTarget.classList.add('active');
+}
+</script>
+
+</body>
+</html>
